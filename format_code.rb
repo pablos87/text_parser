@@ -8,6 +8,12 @@ if file_path.nil?
 end
 
 File.foreach(file_path) do |line|
-  puts line.sub("§", "\n\t§")
+  replace_string = 
+    if line.chars.first == '§'
+      "\t§"
+    else
+      "\n\t§"
+    end
+  puts line.sub("§", replace_string)
 end
 
