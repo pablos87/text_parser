@@ -31,7 +31,7 @@ File.foreach(file_path) do |line|
     end
   else
     article_data = articles_data.first
-    sections_data = article_data.last.scan(/(\d+\.) (.*)/)
+    sections_data = article_data.last.scan(/\A(\d+\.) (.*)\Z/)
     unless sections_data.empty?
       section_data = sections_data.first
       articles << Article.new(title: article_data.first,
