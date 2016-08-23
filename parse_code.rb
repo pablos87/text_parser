@@ -2,12 +2,7 @@
 require_relative 'article'
 require_relative 'paragraph'
 
-file_path = ARGV[0]                                                    
-                                                                       
-if file_path.nil?                                                      
-  puts 'ArgumentError: CSV file path is required'                      
-  exit                                                                 
-end                                                                    
+file_path = ARGV.shift || raise("Usage: #{$PROGRAM_NAME} raw-legal.txt")                                                                      
       
 articles = []
 formatted_text = ''          
