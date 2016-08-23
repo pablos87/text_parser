@@ -1,6 +1,9 @@
 #!/usr/bin/ruby
 require_relative 'article'
 require_relative 'paragraph'
+require_relative 'text_equality_test'
+require 'test/unit/assertions'
+include Test::Unit::Assertions
 
 file_path = ARGV.shift || raise("Usage: #{$PROGRAM_NAME} raw-legal.txt")                                                                      
       
@@ -42,10 +45,6 @@ end
 
 puts articles
 puts formatted_text
-
-if formatted_text == articles.to_s
-  puts "\nPorównywane teksty są takie same"
-else
-  puts "\nPorównywane teksty różnią się"
-end
+sd = articles.to_s
+assert_equal formatted_text, "#{articles.join("\n")}\n", "Compared texts are not equal"
 
