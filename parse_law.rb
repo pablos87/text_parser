@@ -15,7 +15,7 @@ articles = []
 File.foreach(file_path) do |line|                                      
   articles_data = line.scan(/(Art\. \d+\[?\d?[a-z]?\]?\.) (.*)/)
   if articles_data.empty?
-    sections_data = line.scan(/(\d+\.) (.*)/)
+    sections_data = line.scan(/\A(\d+\.) (.*)\Z/)
     unless sections_data.empty?
       article = articles.last
       section_data = sections_data.first
