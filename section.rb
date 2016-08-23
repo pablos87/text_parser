@@ -8,14 +8,9 @@ class Section
   end
                                                                        
   def to_s                                                             
-    output = "\t#{title}"
-    if subparagraphs.empty?
-      output << " #{body}\n"
-    else
-      output << " #{body}\n"
-      subparagraphs.each do |subparagraph|
-        output << subparagraph.to_s
-      end
+    output = "\t#{title} #{body}\n"
+    subparagraphs.each do |subparagraph|
+      output << subparagraph.to_s
     end
     output
   end                                                                  

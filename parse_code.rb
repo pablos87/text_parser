@@ -43,7 +43,7 @@ end
 puts articles
 puts formatted_text
 
-if formatted_text <=> articles.to_s
+if formatted_text == articles.to_s
   puts "\nPorównywane teksty są takie same"
 else
   puts "\nPorównywane teksty różnią się"

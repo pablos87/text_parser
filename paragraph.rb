@@ -7,6 +7,6 @@ class Paragraph
   end
 
   def to_s
-    "\t#{title} #{body}\n"
+    "\t#{title} #{body}"
   end
 end
