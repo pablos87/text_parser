@@ -11,7 +11,7 @@ class Article
   end
   
   def to_s
-    output = title
+    output = [title]
     if paragraphs.empty? && sections.empty?
       output << " #{body}\n"
     elsif !paragraphs.empty?
@@ -25,6 +25,6 @@ class Article
         output << section.to_s
       end
     end
-    output
+    output.join
   end
 end
