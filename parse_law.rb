@@ -22,7 +22,7 @@ File.foreach(file_path) do |line|
       article.sections << Section.new(title: section_data.first,
 				      body: section_data.last)
     end
-    subparagraphs_data = line.scan(/(\d+\)) (.*)/)
+    subparagraphs_data = line.scan(/\A(\d+\)) (.*)\Z/)
     unless subparagraphs_data.empty?
       section = articles.last.sections.last
       subparagraph_data = subparagraphs_data.first
